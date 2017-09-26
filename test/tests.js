@@ -6,11 +6,17 @@ const mongoose = require('mongoose');
 const Store = require('../dist');
 const schema = require('../dist/schema');
 
-mongoose.connect('mongodb://localhost:27017/test_brute_express_mongoose');
 const EXPIRE_SHORT = 100000;
 const EXPIRE_IMMEDIATE = 0;
 
 describe('MongooseStore', function () {
+  before(function () {
+    mongoose.Promise = global.Promise;
+    return mongoose.connect('mongodb://localhost:27017/test_brute_express_mongoose', {
+      useMongoClient: true
+    });
+  });
+
   beforeEach(function () {
     mongoose.Promise = Promise;
     this.model = mongoose.model('bruteforce', schema);
