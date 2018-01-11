@@ -11,10 +11,10 @@ npm install express-brute-mongoose
 ## Usage
 
 ~~~javascript
-var ExpressBrute = require('express-brute'),
+var ExpressBrute = require('express-brute');
 var MongooseStore = require('express-brute-mongoose');
 var BruteForceSchema = require('express-brute-mongoose/dist/schema');
-var MongooseClient = require('mongoose');
+var mongoose = require('mongoose');
 
 var model = mongoose.model('bruteforce', BruteForceSchema);
 var store = new MongooseStore(model);
