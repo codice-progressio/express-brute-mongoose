@@ -11,15 +11,18 @@ yarn add express-brute-mongoose
 ## Usage
 
 ```javascript
-var ExpressBrute = require("express-brute");
-var MongooseStore = require("express-brute-mongoose");
-var BruteForceSchema = require("express-brute-mongoose/dist/schema");
-var mongoose = require("mongoose");
+const ExpressBrute = require("express-brute");
+const MongooseStore = require("express-brute-mongoose");
+const BruteForceSchema = require("express-brute-mongoose/dist/schema");
+const mongoose = require("mongoose");
 
-var model = mongoose.model("bruteforce", new mongoose.Schema(BruteForceSchema));
-var store = new MongooseStore(model);
+const model = mongoose.model(
+  "bruteforce",
+  new mongoose.Schema(BruteForceSchema)
+);
+const store = new MongooseStore(model);
 
-var bruteforce = new ExpressBrute(store);
+const bruteforce = new ExpressBrute(store);
 
 app.post(
   "/auth",
@@ -32,7 +35,7 @@ app.post(
 
 ## Defining your Mongoose Schema
 
-You can either use the default schema provided at `express-brute-mongoose/schema` or roll your own, as long as it matches the basic structural requirements of the schema as follows:
+You can either use the default schema provided at `express-brute-mongoose/dist/schema` or roll your own, as long as it matches the basic structural requirements of the schema as follows:
 
 ```javascript
 {
