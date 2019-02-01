@@ -10,17 +10,18 @@ const EXPIRE_SHORT = 100000;
 const EXPIRE_IMMEDIATE = 0;
 
 describe("MongooseStore", () => {
-  before(() => {
-    mongoose.Promise = global.Promise;
-    return mongoose.connect(
-      "mongodb://localhost:27017/test_brute_express_mongoose",
-      { useNewUrlParser: true }
-    );
+  before(function() {
+    return mongoose
+      .connect("mongodb://localhost:27017/test_brute_express_mongoose", {
+        useNewUrlParser: true
+      })
+      .then(() => {
+        this.model = mongoose.model("bruteforce", new mongoose.Schema(schema));
+      });
   });
 
   beforeEach(function() {
     mongoose.Promise = Promise;
-    this.model = mongoose.model("bruteforce", schema);
     this.store = new Store(this.model);
     return this.model.deleteMany({}).exec();
   });

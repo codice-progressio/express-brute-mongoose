@@ -4,36 +4,37 @@ Mongoose store adapter for [express-brute](https://github.com/AdamPflug/express-
 
 ## Installation
 
-~~~
-npm install express-brute-mongoose
-~~~
+```
+yarn add express-brute-mongoose
+```
 
 ## Usage
 
-~~~javascript
-var ExpressBrute = require('express-brute');
-var MongooseStore = require('express-brute-mongoose');
-var BruteForceSchema = require('express-brute-mongoose/dist/schema');
-var mongoose = require('mongoose');
+```javascript
+var ExpressBrute = require("express-brute");
+var MongooseStore = require("express-brute-mongoose");
+var BruteForceSchema = require("express-brute-mongoose/dist/schema");
+var mongoose = require("mongoose");
 
-var model = mongoose.model('bruteforce', BruteForceSchema);
+var model = mongoose.model("bruteforce", new mongoose.Schema(BruteForceSchema));
 var store = new MongooseStore(model);
 
 var bruteforce = new ExpressBrute(store);
 
-app.post('/auth',
+app.post(
+  "/auth",
   bruteforce.prevent, // error 403 if we hit this route too often
-  function (req, res, next) {
-    res.send('Success!');
+  function(req, res, next) {
+    res.send("Success!");
   }
 );
-~~~
+```
 
 ## Defining your Mongoose Schema
 
 You can either use the default schema provided at `express-brute-mongoose/schema` or roll your own, as long as it matches the basic structural requirements of the schema as follows:
 
-~~~javascript
+```javascript
 {
   "_id": String,
   "data": {
@@ -43,17 +44,17 @@ You can either use the default schema provided at `express-brute-mongoose/schema
   },
   "expires": Date
 }
-~~~
+```
 
 The **default schema** included in the package includes a Mongo index on the `_id` field and another index that will automatically delete each entry 1 day after it has passed its `expires` time, in an effort to keep the collection clean.
 
 ## Development
 
 Build the package with
-`npm run compile`
+`yarn compile`
 
 Run tests with
-`npm run test`
+`yarn test`
 
 Run the linter with
-`npm run lint`
+`yarn lint`

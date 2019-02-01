@@ -22,9 +22,6 @@
     "dist/"
   ],
   "license": "MIT",
-  "peerDependencies": {
-    "mongoose": "*"
-  },
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-eslint": "^8.0.0",
