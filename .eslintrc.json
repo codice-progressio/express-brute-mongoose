@@ -4,12 +4,7 @@
     "mocha": true,
     "node": true
   },
-  "extends": "airbnb-base",
+  "extends": ["plugin:prettier/recommended"],
   "parser": "babel-eslint",
-  "rules": {
-    "comma-dangle": [2, "never"],
-    "func-names": [0],
-    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
-    "no-param-reassign": [2, {"props": false}]
-  }
+  "rules": {}
 }
