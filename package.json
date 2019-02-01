@@ -8,8 +8,8 @@
   "scripts": {
     "compile": "babel --presets es2015 -d ./dist ./lib",
     "lint": "eslint ./lib ./test --quiet",
-    "prepare": "rm -rf ./dist; npm run compile",
-    "test": "npm run compile; mocha ./test --recursive --compilers js:babel-register --reporter spec"
+    "prepare": "rm -rf ./dist; yarn compile",
+    "test": "yarn compile; mocha ./test --recursive --compilers js:babel-register --reporter spec"
   },
   "repository": {
     "type": "git",
