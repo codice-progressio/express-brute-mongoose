@@ -58,3 +58,11 @@ Run tests with
 
 Run the linter with
 `yarn lint`
+
+## Running Tests
+
+You should have mongo running on port `27017` before running tests. If you have docker-compose and docker installed, you can get mongo up and running by using the following command:
+
+```bash
+docker-compose up
+```
