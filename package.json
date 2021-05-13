@@ -1,19 +1,19 @@
 {
-  "name": "express-brute-mongoose",
+  "name": "@codice-progressio/express-brute-mongoose",
   "version": "1.1.0",
   "description": "Mongoose store for express-brute.",
   "author": "Chris Bargren <cbargren@gmail.com>",
-  "homepage": "https://github.com/cbargren/express-brute-mongoose.git",
+  "homepage": "https://github.com/RafaelAngelRamirez/express-brute-mongoose.git",
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel --presets es2015 -d ./dist ./lib",
     "lint": "eslint ./lib ./test --quiet",
     "prepare": "rm -rf ./dist; yarn compile",
-    "test": "yarn compile; mocha ./test --recursive --compilers js:babel-register --reporter spec"
+    "test": "yarn compile && mocha ./test --recursive --require babel-register --reporter spec"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/cbargren/express-brute-mongoose.git"
+    "url": "http://github.com/RafaelAngelRamirez/express-brute-mongoose.git"
   },
   "engine": {
     "node": ">=0.4.0"
@@ -23,6 +23,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@babel/register": "^7.13.16",
     "babel-cli": "^6.6.5",
     "babel-eslint": "^8.0.0",
     "babel-plugin-transform-es2015-destructuring": "^6.9.0",
@@ -32,13 +33,13 @@
     "eslint": "^4.6.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "expect": "^21.1.0",
-    "mocha": "^3.2.0",
+    "expect": "^26.6.2",
+    "mocha": "^8.4.0",
     "mongoose": "^5.4.8",
     "prettier": "^1.16.3"
   },
   "dependencies": {
-    "express-brute": "^1.0.1",
+    "@codice-progressio/express-brute": "^2.0.0",
     "moment": "^2.18.1"
   }
 }

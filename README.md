@@ -1,5 +1,8 @@
 Mongoose store adapter for [express-brute](https://github.com/AdamPflug/express-brute).
 
+>Version parcheada
+
+
 [![NPM](https://nodei.co/npm/express-brute-mongoose.png?compact=true)](https://npmjs.org/package/express-brute-mongoose)
 
 ## Installation
@@ -11,9 +14,9 @@ yarn add express-brute-mongoose
 ## Usage
 
 ```javascript
-const ExpressBrute = require("express-brute");
-const MongooseStore = require("express-brute-mongoose");
-const BruteForceSchema = require("express-brute-mongoose/dist/schema");
+const ExpressBrute = require("@codice-progressio/express-brute");
+const MongooseStore = require("@codice-progressio/express-brute-mongoose");
+const BruteForceSchema = require("@codice-progressio/express-brute-mongoose/dist/schema");
 const mongoose = require("mongoose");
 
 const model = mongoose.model(
