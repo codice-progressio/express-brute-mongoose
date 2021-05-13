@@ -26,6 +26,10 @@ describe("MongooseStore", () => {
     return this.model.deleteMany({}).exec();
   });
 
+  after(function(done) {
+    return mongoose.disconnect(done);
+  });
+
   it("should be able to set a value", function() {
     return this.store
       .set("foo", { count: 123 }, EXPIRE_SHORT)
