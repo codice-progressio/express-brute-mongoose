@@ -1,6 +1,6 @@
 {
   "name": "@codice-progressio/express-brute-mongoose",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Mongoose store for express-brute.",
   "author": "Chris Bargren <cbargren@gmail.com>",
   "homepage": "https://github.com/RafaelAngelRamirez/express-brute-mongoose.git",
